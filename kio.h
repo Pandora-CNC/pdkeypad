@@ -35,7 +35,7 @@
 #define KEY(K, KS) ((KS) + (K))
 
 // Macro to test if key is pressed
-#define KEY_TEST(KEY, VAL) ((((unsigned int)(VAL)) >> (KEY) & 1)
+#define KEY_TEST(KEY, VAL) (((unsigned int)(VAL)) >> (KEY) & 1)
 
 // Read keys instruction
 #define INS_RKR 0x42
