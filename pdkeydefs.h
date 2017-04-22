@@ -3,7 +3,7 @@
   An open-source reimplementation of the Pandora keypad driver
   (c) 2017 0xbmuessig, bmuessig.eu
 
-  phykeydefs.h: Virtal scan code key definitions for the DDCSV1.1
+  pdkeydefs.h: Virtal scan code key definitions for the DDCSV1.1
 */
 
 #ifndef PDKEYDEFS_H
