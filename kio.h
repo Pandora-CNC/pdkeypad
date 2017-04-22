@@ -2,6 +2,8 @@
   pdkeypad
   An open-source reimplementation of the Pandora keypad driver
   (c) 2017 0xbmuessig, bmuessig.eu
+
+  kio.h: Keypad I/O header
 */
 
 #ifndef KIO_H
@@ -13,6 +15,27 @@
 // For readability, define HIGH and LOW constants
 #define HIGH 1
 #define LOW 0
+
+// Key columns
+#define K1 2
+#define K2 1
+#define K3 0
+
+// Key rows
+#define KS1 28
+#define KS2 24
+#define KS3 20
+#define KS4 16
+#define KS5 12
+#define KS6 8
+#define KS7 4
+#define KS8 0
+
+// Macro to get key bit offset
+#define KEY(K, KS) ((KS) + (K))
+
+// Macro to test if key is pressed
+#define KEY_TEST(KEY, VAL) ((((unsigned int)(VAL)) >> (KEY) & 1)
 
 // Read keys instruction
 #define INS_RKR 0x42

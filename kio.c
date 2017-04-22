@@ -2,6 +2,8 @@
   pdkeypad
   An open-source reimplementation of the Pandora keypad driver
   (c) 2017 0xbmuessig, bmuessig.eu
+
+  kio.c: Keypad low-level I/O driver
 */
 
 #include "kio.h"
@@ -77,7 +79,7 @@ unsigned char kio_read(void)
     w55fa93_gpio_set(CLK_GRP, CLK_PIN, LOW);
     // Wait for the pins to settle
     usleep(SIF_CLP);
-    // Read the current bit on DIO and store it
+    // Read the current bit LSB-first on DIO and store it
     if(w55fa93_gpio_get(DIO_GRP, DIO_PIN))
       word |= (1 << bit);
     // Rise the clock again
@@ -95,7 +97,7 @@ unsigned int kio_keys(void)
   kio_write(INS_RKR);
   // Wait until the device is surely ready
   usleep(SIF_TTD);
-  // Read 4 bytes
+  // Read 4 bytes to buf: [MSB] W0W1W2W3 [LSB]
   for(word = 0; word < 4; word++)
     buffer = (buffer << 8) | (kio_read() & 0xFF);
   // End the transfer
