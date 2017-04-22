@@ -11,10 +11,10 @@
 
 #include <linux/input.h>
 
-#define K_FRO       KEY_F1
-#define K_SELECT    KEY_F2
+#define K_FRO       KEY_F3
+#define K_SELECT    KEY_PAGEUP
 #define K_2ND       KEY_LEFTSHIFT
-#define K_MODIFY    KEY_F3
+#define K_MODIFY    KEY_PAGEDOWN
 #define K_MODE      KEY_F4
 #define K_CANCEL    KEY_ESC
 #define K_ENTER     KEY_ENTER
@@ -26,7 +26,7 @@
 #define K_PAUSE     KEY_PAUSE
 #define K_RST       KEY_STOP
 #define K_PAGE      KEY_TAB
-#define K_TOOLPATH  KEY_F5
-#define K_SPINDLE   KEY_F6
+#define K_TOOLPATH  KEY_F1
+#define K_SPINDLE   KEY_F2
 
 #endif
