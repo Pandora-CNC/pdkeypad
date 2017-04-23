@@ -2,17 +2,21 @@
 
 int uinput_fd;
 
+// Application entry point
 int main(unsigned int argc, char* argv[])
 {
+  // Initialize everything
   if(!init(UINPUT_DEVICE))
 
   return 0;
 }
 
+// Initializes everything
 int init(char* uinput_dev)
 {
   if(!(uinput_fd = open(uinput_fd, O_WRONLY | O_NONBLOCK))) {
-
+    fprintf(stderr, "ERR: Opening uinput device failed!\n");
+    return false;
   }
 
   int err = 0;
@@ -49,4 +53,13 @@ int init(char* uinput_dev)
     fprintf(stderr, "ERR: Registering uinput keys failed!\n");
     return false;
   }
+
+  // Initialize the low level driver
+  kio_init();
+}
+
+// Deinitialize everything
+void deinit(void)
+{
+
 }

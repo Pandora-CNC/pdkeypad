@@ -12,5 +12,6 @@
 
 int main(unsigned int argc, char* argv[]);
 int init(char uinput_dev);
+void deinit(void);
 
 #endif
