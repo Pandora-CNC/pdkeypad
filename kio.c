@@ -27,6 +27,18 @@ void kio_init(void)
   w55fa93_gpio_set_input(UK1_GRP, UK1_PIN);
 }
 
+void kio_deinit(void)
+{
+  // Configure the DIO line to: Input
+  w55fa93_gpio_set_input(DIO_GRP, DIO_PIN);
+
+  // Configure the CLK line to: Input
+  w55fa93_gpio_set_input(CLK_GRP, CLK_PIN);
+
+  // Configure the STB line to: Input
+  w55fa93_gpio_set_input(STB_GRP, STB_PIN);
+}
+
 void kio_begin_transaction(void)
 {
   // Set the clock low (since data is latched on the rising edge)
