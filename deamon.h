@@ -1,6 +1,12 @@
 #ifndef DEAMON_H
 #define DEAMON_H
 
+#include <sys/fcntl.h>
+#include <sys/ioctl.h>
+#include <linux/input.h>
+#include <linux/uinput.h>
+#include <unistd.h>
+
 #include "kio.h"
 #include "kdefs.h"
 #include "idefs.h"

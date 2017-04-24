@@ -7,6 +7,7 @@
 */
 
 #include "kio.h"
+#include "gpio.h"
 
 void kio_init(void)
 {

@@ -9,8 +9,8 @@
 #ifndef KIO_H
 #define KIO_H
 
-#include <mach/w55fa93_gpio.h>
 #include <unistd.h>
+#include "gpio.h"
 
 // For readability, define HIGH and LOW constants
 #define HIGH 1
