@@ -6,11 +6,19 @@
   kio.c: Keypad low-level I/O driver
 */
 
+#include <stdio.h>
+#include <stdbool.h>
 #include "kio.h"
 #include "gpio.h"
 
-void kio_init(void)
+int kio_init(void)
 {
+  // Initialize the GPIO driver
+  if(!w55fa93_gpio_init()) {
+    fprintf(stderr, "ERR: GPIO-Init failed!");
+    return false;
+  }
+
   // Configure the DIO line to: Output, HIGH
   w55fa93_gpio_set_output(DIO_GRP, DIO_PIN);
   w55fa93_gpio_set(DIO_GRP, DIO_PIN, HIGH);
@@ -26,6 +34,9 @@ void kio_init(void)
   // Configure the unknown pins to: Input
   w55fa93_gpio_set_input(UK0_GRP, UK0_PIN);
   w55fa93_gpio_set_input(UK1_GRP, UK1_PIN);
+
+  // Return success
+  return true;
 }
 
 void kio_deinit(void)
@@ -38,6 +49,9 @@ void kio_deinit(void)
 
   // Configure the STB line to: Input
   w55fa93_gpio_set_input(STB_GRP, STB_PIN);
+
+  // Deinitialize the GPIO driver
+  w55fa93_gpio_deinit();
 }
 
 void kio_begin_transaction(void)

@@ -63,7 +63,7 @@
 #define UK1_GRP GPIO_GROUP_D
 #define UK1_PIN 13
 
-void kio_init(void);
+int kio_init(void);
 void kio_deinit(void);
 void kio_begin_transaction(void);
 void kio_end_transaction(void);
