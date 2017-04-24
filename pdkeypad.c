@@ -7,6 +7,7 @@ int main(unsigned int argc, char* argv[])
 {
   // Initialize everything
   if(!init(UINPUT_DEVICE))
+    return 1;
 
   return 0;
 }
@@ -14,7 +15,7 @@ int main(unsigned int argc, char* argv[])
 // Initializes everything
 int init(char* uinput_dev)
 {
-  if(!(uinput_fd = open(uinput_fd, O_WRONLY | O_NONBLOCK))) {
+  if(!(uinput_fd = open(uinput_dev, O_WRONLY | O_NONBLOCK))) {
     fprintf(stderr, "ERR: Opening uinput device failed!\n");
     return false;
   }
@@ -56,6 +57,8 @@ int init(char* uinput_dev)
 
   // Initialize the low level driver
   kio_init();
+
+  return true;
 }
 
 // Deinitialize everything

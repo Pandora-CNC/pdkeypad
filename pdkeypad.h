@@ -1,6 +1,8 @@
 #ifndef PDKEYPAD_H
 #define PDKEYPAD_H
 
+#include <stdio.h>
+#include <string.h>
 #include <linux/input.h>
 #include <linux/uinput.h>
 
