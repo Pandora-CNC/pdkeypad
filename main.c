@@ -4,7 +4,7 @@
 int main(unsigned int argc, char* argv[])
 {
   // For testing, just init the deamon
-  if(!init(UINPUT_DEVICE))
+  if(!init_deamon(UINPUT_DEVICE))
     return 1;
 
   return 0;
