@@ -3,11 +3,11 @@
   An open-source reimplementation of the Pandora keypad driver
   (c) 2017 0xbmuessig, bmuessig.eu
 
-  phykeydefs.h: Physical key definitions for the DDCSV1.1
+  kdefs.h: Physical key definitions for the DDCSV1.1
 */
 
-#ifndef PHYKEYDEFS_H
-#define PHYKEYDEFS_H
+#ifndef KDEFS_H
+#define KDEFS_H
 
 #include "kio.h"
 

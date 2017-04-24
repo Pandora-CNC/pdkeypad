@@ -3,11 +3,11 @@
   An open-source reimplementation of the Pandora keypad driver
   (c) 2017 0xbmuessig, bmuessig.eu
 
-  pdkeydefs.h: Virtal scan code key definitions for the DDCSV1.1
+  idefs.h: Virtal scan code key definitions for the DDCSV1.1
 */
 
-#ifndef PDKEYDEFS_H
-#define PDKEYDEFS_H
+#ifndef IDEFS_H
+#define IDEFS_H
 
 #include <linux/input.h>
 

@@ -1,19 +1,10 @@
-#include "pdkeypad.h"
+#include "deamon.h"
 
+// The uinput file ptr
 int uinput_fd;
 
-// Application entry point
-int main(unsigned int argc, char* argv[])
-{
-  // Initialize everything
-  if(!init(UINPUT_DEVICE))
-    return 1;
-
-  return 0;
-}
-
-// Initializes everything
-int init(char* uinput_dev)
+// Initializes the deamon
+int init_deamon(char* uinput_dev)
 {
   if(!(uinput_fd = open(uinput_dev, O_WRONLY | O_NONBLOCK))) {
     fprintf(stderr, "ERR: Opening uinput device failed!\n");
@@ -55,14 +46,19 @@ int init(char* uinput_dev)
     return false;
   }
 
-  // Initialize the low level driver
   kio_init();
 
   return true;
 }
 
-// Deinitialize everything
-void deinit(void)
+// Deinitializes the deamon
+void deinit_deamon(void)
+{
+
+}
+
+// Runs the deamon
+void run_deamon(void)
 {
 
 }
